@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Drago Airport</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+    <div id="airport-ui">
+        <div class="airport-overlay"></div> <!-- Voor zachte achtergrond overlay -->
+
+        <div class="airport-container">
+            <div class="airport-header">
+                <div class="airport-info">
+                    <h1 id="airport-title">Vlucht Selectie</h1>
+                    <p id="airport-subtitle">Kies jouw bestemming</p>
+                </div>
+                <button class="close-btn" onclick="closeUI()" aria-label="Sluit menu">X</button>
+            </div>
+
+            <!-- ✅ Hier komt de afbeelding -->
+            <div class="airport-image-wrapper">
+                <img id="airport-image" src="" alt="Airport afbeelding" />
+            </div>
+
+            <div class="flight-list" id="flight-list">
+                <!-- Vlucht opties worden hier dynamisch geladen -->
+            </div>
+
+            <button class="confirm-btn" onclick="confirmFlight()" disabled id="confirm-btn">
+                Bevestig vlucht
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

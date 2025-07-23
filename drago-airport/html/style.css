@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+
+/* Reset + basis */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: transparent;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #f0f0f0;
+}
+
+/* Body dimming bij menu open */
+body.menu-open {
+    background: rgba(0, 0, 0, 0.85);
+    transition: background 0.3s ease;
+}
+
+/* Fullscreen overlay container */
+#airport-ui {
+    position: fixed;
+    inset: 0;
+    display: none; /* standaard verborgen */
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.85);
+    z-index: 9999;
+}
+
+/* Hoofd container */
+.airport-container {
+    width: 620px; /* extra breed menu */
+    background-color: #1f1f1f;
+    border-radius: 20px;
+    padding: 40px 48px 38px;
+    box-shadow: 0 28px 70px rgba(0,0,0,0.9);
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+
+/* Header */
+.airport-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 36px;
+}
+
+.airport-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.025em;
+}
+
+.airport-header button.close-btn {
+    background: #ff4b2b;
+    border: none;
+    border-radius: 16px;
+    padding: 12px 22px;
+    color: white;
+    font-weight: 700;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 16px rgba(255, 75, 43, 0.95);
+}
+
+.airport-header button.close-btn:hover {
+    background: #ff6a49;
+    box-shadow: 0 5px 22px rgba(255, 106, 73, 1);
+}
+
+/* Airport image wrapper */
+.airport-image-wrapper {
+    width: 100%;
+    height: 190px;
+    margin-bottom: 32px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.55);
+}
+
+.airport-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.5s ease;
+}
+
+/* Container vluchtopties */
+.flight-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 12px;
+}
+
+/* Individuele vluchtkaart */
+.flight-item {
+    background: linear-gradient(145deg, #222222, #1a1a1a);
+    border-radius: 16px;
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition:
+        background 0.25s ease,
+        transform 0.15s ease;
+    user-select: none;
+    border: 1.5px solid transparent;
+}
+
+/* Hover effect: subtiele lichte oplichting */
+.flight-item:hover {
+    background: linear-gradient(145deg, #2a2a2a, #222222);
+    border-color: #ff4b2b;
+    
+}
+
+/* Geselecteerde vlucht */
+.flight-item.selected {
+    border-color: #ff9900 !important;
+    background: linear-gradient(145deg, #acabab, #414040);
+}
+
+/* Vlucht label */
+.flight-item .label {
+    font-size: 20px;
+    font-weight: 700;
+    color: #f0f0f0;
+    letter-spacing: 0.02em;
+}
+
+.flight-item .price {
+    background: #333333;
+    padding: 14px 34px;
+    border-radius: 28px;
+    font-weight: 700;
+    color: #f5a623;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    transition: background 0.25s ease;
+    min-width: 140px;
+    justify-content: center;
+    letter-spacing: 0.015em;
+}
+
+.flight-item .price:hover {
+    background: #444444;
+}
+
+/* Valuta icoon */
+.currency-icon {
+    margin-right: 12px;
+    font-weight: 900;
+    font-size: 26px;
+    color: #15fa00;
+    text-shadow: 0 0 14px rgba(100, 248, 1, 0.9);
+    font-family: 'Arial', sans-serif;
+    user-select: none;
+}
+
+/* Geselecteerde vlucht */
+.flight-item.selected {
+    border-color: #ff5100 !important;
+    background-color: #505050;
+}
+
+/* Bevestig knop */
+.airport-container button.confirm-btn {
+    margin-top: 36px;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+}
+
+.airport-container button.confirm-btn:disabled {
+    opacity: 0.45;
+    cursor: default;
+    box-shadow: none;
+}
+
+.airport-container button.confirm-btn:not(:disabled):hover {
+    background: linear-gradient(90deg, #ff4b2b, #ff416c);
+    box-shadow: 0 4px 8px rgba(255, 75, 43, 1);
+}
+
+/* Scrollbar styling */
+.flight-list::-webkit-scrollbar {
+    width: 12px;
+}
+
+.flight-list::-webkit-scrollbar-track {
+    background: #1f1f1f;
+    border-radius: 24px;
+}
+
+.flight-list::-webkit-scrollbar-thumb {
+    background: #ff4b2b;
+    border-radius: 24px;
+}
