@@ -1,4 +1,4 @@
-Easy plug and play
+Easy plug and play < 8 minute cooldown for flying again
 
 If u want to add illegal items you have to edit config and server (top of server). 
 
