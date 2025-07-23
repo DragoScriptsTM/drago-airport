@@ -6,5 +6,6 @@ Works with QB-core and ps-dispatch, must haves anyway so you probably are good t
 
 If you want to set up ps-dispatch make sure that u check alertdispatch file and add the dispatch to ps-dispatch > client > alerts > scroll to bottom and copy pasta voila. 
 
-<img width="789" height="833" alt="drago-airport" src="https://github.com/user-attachments/assets/236a7e35-02f6-4b7f-b4a1-dfaf8e4dfc92" />
+<img width="606" height="745" alt="previewairport" src="https://github.com/user-attachments/assets/a396e5c4-96b9-4624-8223-2d5bdff265bb" />
+
 
